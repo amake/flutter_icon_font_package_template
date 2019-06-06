@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="1000"
+   width="1000"
+   sodipodi:docname="CustomFont.svg"
+   version="1.1"
+   id="svg6406"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="148"
+     inkscape:cy="502"
+     inkscape:document-units="px"
+     inkscape:current-layer="g7028"
+     showgrid="false"
+     showguides="true"
+     inkscape:window-width="2560"
+     inkscape:window-height="1308"
+     inkscape:window-x="1280"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     showborder="true"
+     inkscape:showpageshadow="false">
+    <sodipodi:guide
+       id="guide_baseline"
+       inkscape:label="baseline"
+       position="0,253"
+       orientation="0,1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       id="guide_ascender"
+       inkscape:label="ascender"
+       position="0,945"
+       orientation="0,1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       id="guide_caps"
+       inkscape:label="caps"
+       position="0,896"
+       orientation="0,1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       id="guide_xheight"
+       inkscape:label="xheight"
+       position="0,729"
+       orientation="0,1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       id="guide_descender"
+       inkscape:label="descender"
+       position="0,28"
+       orientation="0,1"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <font
+       id="font7067"
+       horiz-origin-y="253"
+       horiz-adv-x="1000">
+      <font-face
+         id="font-face7063"
+         descent="225"
+         ascent="692"
+         x-height="476"
+         cap-height="643"
+         units-per-em="1000"
+         font-family="SVGFont" />
+      <glyph
+         id="glyph7065"
+         d=" M500.0 -50.0L488.0 -40.0C230.0 170.0 160.0 244.0 160.0 364.0C160.0 464.0 240.0 544.0 340.0 544.0C422.0 544.0 468.0 498.0 500.0 462.0C532.0 498.0 578.0 544.0 660.0 544.0C760.0 544.0 840.0 464.0 840.0 364.0C840.0 244.0 770.0 170.0 512.0 -40.0ZM340.0 504.0C262.0 504.0 200.0 442.0 200.0 364.0C200.0 262.0 264.0 194.0 500.0 2.0C736.0 194.0 800.0 262.0 800.0 364.0C800.0 442.0 738.0 504.0 660.0 504.0C590.0 504.0 552.0 462.0 522.0 428.0L500.0 402.0L478.0 428.0C448.0 462.0 410.0 504.0 340.0 504.0Z"
+         unicode="" />
+    </font>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g7028"
+     style="display:inline"
+     inkscape:groupmode="layer"
+     inkscape:label="GlyphLayer-"
+     sodipodi:insensitive="true">
+    <path
+       id="path6999"
+       d="M 500,797 488,787 C 230,577 160,503 160,383 c 0,-100 80,-180 180,-180 82,0 128,46 160,82 32,-36 78,-82 160,-82 100,0 180,80 180,180 0,120 -70,194 -328,404 z M 340,243 c -78,0 -140,62 -140,140 0,102 64,170 300,362 236,-192 300,-260 300,-362 0,-78 -62,-140 -140,-140 -70,0 -108,42 -138,76 l -22,26 -22,-26 C 448,285 410,243 340,243 Z"
+       inkscape:connector-curvature="0"
+       style="stroke-width:20" />
+  </g>
+</svg>
