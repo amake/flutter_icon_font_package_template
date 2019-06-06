@@ -12,6 +12,12 @@ dependencies:
   flutter_icon_font_package_template:
     path: ../
 
+  flutter_svg: ^0.12.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter:
+  assets:
+    - assets/images/ei-heart.svg
