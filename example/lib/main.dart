@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(title),
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: <Widget>[
               Tab(text: 'TTF', icon: Icon(CustomFontIcons.uE000)),
               Tab(text: 'SVG', icon: SvgIcon('assets/images/ei-heart.svg')),
@@ -60,7 +60,7 @@ class SvgIcon extends StatelessWidget {
   final String assetName;
   final Color color;
 
-  SvgIcon(this.assetName, {this.color});
+  const SvgIcon(this.assetName, {this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +117,7 @@ class FpsCounter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(2)),
+        borderRadius: const BorderRadius.all(Radius.circular(2)),
         color: Colors.black.withOpacity(0.6),
       ),
       padding: const EdgeInsets.all(8),
@@ -127,7 +127,7 @@ class FpsCounter extends StatelessWidget {
         builder: (context, snapshot) {
           return Text(
             '${snapshot.data?.round() ?? '?'} fps',
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           );
         },
       ),
