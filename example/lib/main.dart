@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_icon_font_package_template/custom_font.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fps/fps.dart';
 
 void main() => runApp(MyApp());
 
@@ -80,13 +81,22 @@ class InfiniteIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListView.builder(
-        itemBuilder: (context, i) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: _iconRow(context).toList(),
-          );
-        },
+      child: Stack(
+        children: <Widget>[
+          ListView.builder(
+            itemBuilder: (context, i) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: _iconRow(context).toList(),
+              );
+            },
+          ),
+          const Positioned(
+            right: 0,
+            top: 0,
+            child: FpsCounter(),
+          ),
+        ],
       ),
     );
   }
@@ -97,5 +107,30 @@ class InfiniteIcons extends StatelessWidget {
     for (var i = 0; i < count; i++) {
       yield gen();
     }
+  }
+}
+
+class FpsCounter extends StatelessWidget {
+  const FpsCounter();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(2)),
+        color: Colors.black.withOpacity(0.6),
+      ),
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
+      child: StreamBuilder<num>(
+        stream: eachFrame().transform(const ComputeFps()),
+        builder: (context, snapshot) {
+          return Text(
+            '${snapshot.data?.round() ?? '?'} fps',
+            style: TextStyle(color: Colors.white),
+          );
+        },
+      ),
+    );
   }
 }

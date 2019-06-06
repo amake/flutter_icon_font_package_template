@@ -60,6 +60,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fps:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: e4a6db2d1e66dd3d86976c8d8f62e6e34b57a6d6
+      url: "https://github.com/amake/fps.git"
+    source: git
+    version: "0.2.0"
   matcher:
     dependency: transitive
     description:
