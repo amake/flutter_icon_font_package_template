@@ -36,6 +36,5 @@ builds, but in release builds the difference is not noticeable.
 
 ## Acknowledgments
 
-The sample font uses a glyph from [Evil Icons](https://evil-icons.io/), which
-are copyright (c) 2014 Alexander Madyankin <alexander@madyankin.name> and Roman
-Shamin. See the [license](./evil-icons.LICENSE.txt).
+The sample font uses a glyph from [Evil Icons](https://evil-icons.io/); see
+[LICENSE](./LICENSE.txt).
