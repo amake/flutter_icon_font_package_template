@@ -6,7 +6,8 @@ SVG source.
 ## Getting Started
 
 1. Fork this repository
-2. Change the package `name:` entry in [`pubspec.yaml`](./pubspec.yaml)
+2. Change the package details in [`pubspec.yaml`](./pubspec.yaml): name, author,
+   description, homepage
 3. Replace [`assets/fonts/CustomFont.svg`](./assets/fonts/CustomFont.svg) with
    your own SVG font, e.g. `MyFont.svg`
    - You will want the name to be in PascalCase
