@@ -1,14 +1,41 @@
 # flutter_icon_font_package_template
 
-A new Flutter package project.
+This package provides a template for creating font icon packs for Flutter from
+SVG source.
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+1. Fork this repository
+2. Change the package `name:` entry in [`pubspec.yaml`](./pubspec.yaml)
+3. Replace [`assets/fonts/CustomFont.svg`](./assets/fonts/CustomFont.svg) with
+   your own SVG font, e.g. `MyFont.svg`
+   - You will want the name to be in PascalCase
+   - You can use [Inkscape](https://inkscape.org/) to create SVG fonts:
+     1. Create a new file from the Typography Canvas template
+     2. Place your glyphs on layers created with Extensions > Typography > Add
+        Glyph Layer
+     3. Do Extensions > Typography > Convert Glyph Layers to SVG Font
+4. Run `make` from the root to generate the TTFs and icon data classes
+   - `npm` must be installed in order to generate the TTFs
+5. Edit the `fonts:` section in `pubspec.yaml` to replace `CustomFont` with your
+   font
+6. Add the package as a dependency to your consuming project
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+You can then create icons like `Icon(MyFontIcons.u5000)`.
+
+## Limitations
+
+Currently the generated data class members are named after the glyph's codepoint
+(`u5000`, etc.). TODO: Make a way to provide human-readable names
+
+## Icon Font vs SVG
+
+The example app serves as a performance comparison between icon fonts and SVG
+icons. In my testing, the icon font performs much better than SVG in debug
+builds, but in release builds the difference is not noticeable.
+
+## Acknowledgments
+
+The sample font uses a glyph from [Evil Icons](https://evil-icons.io/), which
+are copyright (c) 2014 Alexander Madyankin <alexander@madyankin.name> and Roman
+Shamin. See the [license](./evil-icons.LICENSE.txt).
