@@ -5,7 +5,7 @@ SVG source.
 
 ## Getting Started
 
-1. Fork this repository
+1. Click "Use this template"
 2. Change the package details in [`pubspec.yaml`](./pubspec.yaml): name, author,
    description, homepage
 3. Replace [`assets/fonts/CustomFont.svg`](./assets/fonts/CustomFont.svg) with
