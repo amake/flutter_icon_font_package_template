@@ -34,9 +34,9 @@ def gen_class(svg_file, class_name, font_name, package_name):
                               'font_name': font_name,
                               'package_name': package_name}
              for c in glyph_chars]
-    gen_class = class_template % {
+    gen_code = class_template % {
         'class_name': class_name, 'properties': '\n'.join(props)}
-    return gen_class
+    return gen_code
 
 
 def die():
@@ -51,6 +51,7 @@ def main():
     if not os.path.isfile(args[0]):
         die()
     svg_file, package_name = args
+    # pylint: disable=unbalanced-tuple-unpacking
     filename = os.path.basename(svg_file)
     font_name, _ = os.path.splitext(filename)
     class_name = font_name + 'Icons'
