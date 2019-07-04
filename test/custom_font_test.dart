@@ -3,6 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('icon data exists', () {
-    expect(CustomFontIcons.uE000, isNotNull);
+    expect(CustomFontIcons.heart, isNotNull);
   });
 }

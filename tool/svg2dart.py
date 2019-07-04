@@ -1,6 +1,7 @@
 from __future__ import print_function
 import sys
 import os
+import yaml
 from xml.etree import ElementTree
 
 ns_svg = 'http://www.w3.org/2000/svg'
@@ -18,7 +19,7 @@ class %(class_name)s {
 '''
 
 prop_template = (
-    "  static const IconData u%(code_point)X = IconData("
+    "  static const IconData %(glyph_name)s = IconData("
     "0x%(code_point)X, "
     "fontFamily: '%(font_name)s', "
     "fontPackage: '%(package_name)s'"
@@ -26,11 +27,12 @@ prop_template = (
 )
 
 
-def gen_class(svg_file, class_name, font_name, package_name):
+def gen_class(svg_file, class_name, font_name, package_name, glyph_map):
     svg = ElementTree.parse(svg_file)
     glyph_chars = [glyph.get('unicode') for glyph
                    in svg.iterfind('.//svg:glyph[@unicode]', namespaces=ns)]
     props = [prop_template % {'code_point': ord(c),
+                              'glyph_name': glyph_map[ord(c)],
                               'font_name': font_name,
                               'package_name': package_name}
              for c in glyph_chars]
@@ -40,22 +42,25 @@ def gen_class(svg_file, class_name, font_name, package_name):
 
 
 def die():
-    print('usage: %s svg packagename' % sys.argv[0], file=sys.stderr)
+    print('usage: %s svg glyphmap packagename' % sys.argv[0], file=sys.stderr)
     sys.exit(1)
 
 
 def main():
     args = sys.argv[1:]
-    if len(args) != 2:
+    if len(args) != 3:
         die()
-    if not os.path.isfile(args[0]):
+    if not all(os.path.isfile(arg) for arg in args[:-1]):
         die()
-    svg_file, package_name = args
     # pylint: disable=unbalanced-tuple-unpacking
+    svg_file, map_file, package_name = args
     filename = os.path.basename(svg_file)
     font_name, _ = os.path.splitext(filename)
     class_name = font_name + 'Icons'
-    result = gen_class(svg_file, class_name, font_name, package_name)
+    with open(map_file) as in_file:
+        glyph_map = yaml.safe_load(in_file)['glyphs']
+    result = gen_class(svg_file, class_name, font_name,
+                       package_name, glyph_map)
     print(result)
 
 

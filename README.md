@@ -16,18 +16,16 @@ SVG source.
      2. Place your glyphs on layers created with Extensions > Typography > Add
         Glyph Layer
      3. Do Extensions > Typography > Convert Glyph Layers to SVG Font
-4. Run `make` from the root to generate the TTFs and icon data classes
+4. Replace [`assets/fonts/CustomFont.yaml`](./assets/Fonts/CustomFont.yaml) with
+   e.g. `MyFont.yaml`, a map giving human-readable names to the codepoints
+   covered by your font. Names must be valid Dart identifiers.
+5. Run `make` from the root to generate the TTFs and icon data classes
    - `npm` must be installed in order to generate the TTFs
-5. Edit the `fonts:` section in `pubspec.yaml` to replace `CustomFont` with your
+6. Edit the `fonts:` section in `pubspec.yaml` to replace `CustomFont` with your
    font
-6. Add the package as a dependency to your consuming project
+7. Add the package as a dependency to your consuming project
 
-You can then create icons like `Icon(MyFontIcons.u5000)`.
-
-## Limitations
-
-Currently the generated data class members are named after the glyph's codepoint
-(`u5000`, etc.). TODO: Make a way to provide human-readable names
+You can then create icons like `Icon(MyFontIcons.foo)`.
 
 ## Icon Font vs SVG
 

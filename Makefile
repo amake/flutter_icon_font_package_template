@@ -27,7 +27,7 @@ $(SVG2TTF): | $(NODE_MODULES)
 
 define GEN_DART_RULE
 lib/$$(call CAMEL2SNAKE,$(1)): $(2)
-	$$(SVG2DART) $$(<) $$(PACKAGE_NAME) > $$(@)
+	$$(SVG2DART) $$(^) $$(PACKAGE_NAME) > $$(@)
 endef
 
-$(foreach _,$(FONTS_SVG),$(eval $(call GEN_DART_RULE,$(notdir $(_:.svg=.dart)),$(_))))
+$(foreach _,$(FONTS_SVG),$(eval $(call GEN_DART_RULE,$(notdir $(_:.svg=.dart)),$(_) $(_:.svg=.yaml))))

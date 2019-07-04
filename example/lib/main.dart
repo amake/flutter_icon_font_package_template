@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
           title: Text(title),
           bottom: const TabBar(
             tabs: <Widget>[
-              Tab(text: 'TTF', icon: Icon(CustomFontIcons.uE000)),
+              Tab(text: 'TTF', icon: Icon(CustomFontIcons.heart)),
               Tab(text: 'SVG', icon: SvgIcon('assets/images/ei-heart.svg')),
             ],
           ),
@@ -46,7 +46,7 @@ class MyHomePage extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             InfiniteIcons(
-                () => Icon(CustomFontIcons.uE000, color: _randomColor())),
+                () => Icon(CustomFontIcons.heart, color: _randomColor())),
             InfiniteIcons(() =>
                 SvgIcon('assets/images/ei-heart.svg', color: _randomColor())),
           ],
