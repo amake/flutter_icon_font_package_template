@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Icon Font Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        iconTheme: IconThemeData.fallback(), //.copyWith(size: 48),
+        iconTheme: const IconThemeData.fallback(), //.copyWith(size: 48),
       ),
       home: MyHomePage(title: 'Icon Font vs SVG Test'),
     );
@@ -71,12 +71,12 @@ class SvgIcon extends StatelessWidget {
   }
 }
 
-typedef Widget IconGen();
+typedef IconGen = Widget Function();
 
 class InfiniteIcons extends StatelessWidget {
   final IconGen gen;
 
-  InfiniteIcons(this.gen);
+  const InfiniteIcons(this.gen);
 
   @override
   Widget build(BuildContext context) {
