@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         iconTheme: const IconThemeData.fallback(), //.copyWith(size: 48),
       ),
-      home: MyHomePage(title: 'Icon Font vs SVG Test'),
+      home: const MyHomePage(title: 'Icon Font vs SVG Test'),
     );
   }
 }
@@ -25,7 +25,7 @@ final _random = Random();
 Color _randomColor() => Color(_random.nextInt(0xFFFFFFFF));
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
