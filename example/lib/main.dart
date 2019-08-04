@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_icon_font_package_template/custom_font.dart';
@@ -127,7 +128,10 @@ class FpsCounter extends StatelessWidget {
         builder: (context, snapshot) {
           return Text(
             '${snapshot.data?.round() ?? '?'} fps',
-            style: const TextStyle(color: Colors.white),
+            style: const TextStyle(
+              color: Colors.white,
+              fontFeatures: [FontFeature.tabularFigures()],
+            ),
           );
         },
       ),
